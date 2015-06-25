@@ -1,0 +1,176 @@
+/* Placeholder Selector */
+/* Mixin */
+/* Clear float */
+.clearfix:after,
+.widgetContent:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix,
+.widgetContent {
+  display: block;
+}
+
+html[xmlns] .clearfix,
+html[xmlns] .widgetContent {
+  display: block;
+}
+
+* html .clearfix,
+* html .widgetContent {
+  height: 1%;
+}
+
+/* Layout */
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover, a:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1170px;
+}
+
+body {
+  color: #4e525d;
+  font-size: 14px;
+  font-family: "Open Sans Regular", Arial Regular, Tahoma Regular, sans-serif;
+  line-height: 150%;
+  background: white;
+}
+body > div > .container {
+  margin: 0 auto;
+}
+body > div > .container > .titleWidget {
+  font-size: 42px;
+  text-align: center;
+}
+body > div > .container > .bodyWidget .item {
+  float: left;
+  text-align: center;
+}
+body > div > .container > .bodyWidget .item img {
+  margin: 0 auto;
+}
+body > div.header .logo {
+  margin-top: 32px;
+  float: left;
+}
+body > div.header .mainNav {
+  float: right;
+}
+body > div.header .mainNav ul li {
+  float: left;
+}
+body > div.header .mainNav ul li a {
+  color: #484c55;
+  padding: 24px 20px;
+  display: block;
+  border-bottom: 3px solid #fff;
+}
+body > div.header .mainNav ul li a:hover {
+  border-bottom: 3px solid #49cbcd;
+  background: #f8f9fb;
+}
+body > div.widgetService {
+  padding: 105px 0 95px;
+}
+body > div.widgetService .bodyWidget .item {
+  width: 25%;
+}
+body > div.widgetService .bodyWidget .item .feature {
+  padding-bottom: 50px;
+}
+body > div.widgetService .bodyWidget .item h3 {
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 22px;
+}
+body > div.widgetPortfolio {
+  background: #f1f1f1;
+}
+body > div.widgetPortfolio .titleWidget {
+  padding: 50px 0 60px;
+}
+body > div.widgetPortfolio .bodyWidget {
+  display: block;
+}
+body > div.widgetPortfolio .bodyWidget .item {
+  width: 31%;
+  height: 314;
+  margin: 0 30px 30px 0;
+}
+body > div.widgetPortfolio .bodyWidget .item:nth-child(3n) {
+  margin-right: 0;
+}
+body > div.widgetPortfolio .seeAll {
+  text-align: center;
+  padding: 30px 0 100px;
+}
+body > div.widgetPortfolio .seeAll a {
+  font: 24px Open Sans Semibold;
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 4px;
+  background: #49cbcd;
+}
+body > div.widgetTeam {
+  padding: 100px 0 100px;
+}
+body > div.widgetTeam .titleWidget {
+  padding: 0 0 140px;
+}
+body > div.widgetTeam .bodyWidget .item {
+  width: 25%;
+}
+body > div.widgetTeam .bodyWidget .item h3 {
+  font-size: 22px;
+  margin: 70px 0 8px;
+}
+body > div.widgetTeam .bodyWidget .item h4 {
+  margin-bottom: 30px;
+}
+body > div.widgetTeam .bodyWidget .item p {
+  line-height: 25px;
+}
+body > div.widgetPlans {
+  padding: 120px 0 100px;
+  background: #f1f1f1;
+}
+body > div.widgetPlans .bodyWidget .item {
+  width: 32%;
+}
+
+/* Portrait tablet to landscape and desktop */
+/* Landscape phone to portrait tablet */
+/* Landscape phones and down */

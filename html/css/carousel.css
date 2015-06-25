@@ -1,0 +1,23 @@
+/* Crousel styles */
+.slides {
+  display: none;
+  position:relative;
+}
+.slides .slidesjs-navigation{
+  position:absolute;
+  top:50%;
+  z-index:999;
+  width:51px;
+  height:51px;
+  background:url(../images/crousel_control.png);
+}
+.slides .slidesjs-previous{
+  left:30px;
+  text-indent:-999px;
+  background-position:0 -51px;
+}
+.slides .slidesjs-next{
+  right:30px;
+  text-indent:999px;
+  background-position:0 0;
+}

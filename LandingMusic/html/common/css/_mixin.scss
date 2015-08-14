@@ -1,0 +1,175 @@
+/*
+$global-font: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Osaka, Arial, sans-serif;
+$font-hirakaku-w6: "Hiragino Kaku Gothic ProN W6","ヒラギノ角ゴ ProN W6";
+$font-hirakaku-w3: "Hiragino Kaku Gothic ProN W3","ヒラギノ角ゴ ProN W3";
+$font-meiryo: Meiryo, "メイリオ";
+$font-gothic: "ＭＳ Ｐゴシック", "MS PGothic";
+*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
+$global-font: "Roboto", sans-serif;
+$global-mobile-font-size: 7px;
+$global-font-size: 14px;
+$global-color: #000;
+$global-color-link: #000;
+$global-color-hover: #0090ff;;
+$line-height:25.29px;
+$line-height-mobile:11px;
+$global_bg:#fff;
+@mixin transition($property: all, $duration: 0.2s, $function: ease-in-out){
+  -webkit-transition: #{$property}  #{$duration}  #{$function};
+  -moz-transition: #{$property}  #{$duration}  #{$function};
+  -ms-transition: #{$property}  #{$duration}  #{$function};
+  -o-transition: #{$property}  #{$duration}  #{$function};
+  transition: #{$property}  #{$duration}  #{$function};
+}
+@mixin animation-name($keyframe){
+  -webkit-animation-name: #{$keyframe};
+  -moz-animation-name: #{$keyframe};
+  -o-animation-name: #{$keyframe};
+  animation-name: #{$keyframe};
+}
+@mixin animation-delay($delay:0.3s){
+  -webkit-animation-delay: #{$delay};
+  animation-delay: #{$delay};
+}
+@mixin animation($animation){
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -o-animation: #{$animation};
+  animation: #{$animation};
+}
+@mixin box-resize($type:both){
+  resize: #{$type};
+  overflow: auto;
+}
+@mixin border-radius($radius...){
+  -webkit-border-radius: #{$radius};
+  -moz-border-radius: #{$radius};
+  border-radius: #{$radius};
+}
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow: #{$shadow};
+  -moz-box-shadow: #{$shadow};
+  box-shadow: #{$shadow};
+}
+@mixin background-size($size){
+  -webkit-background-size: #{$size};
+  -moz-background-size: #{$size};
+  -o-background-size: #{$size};
+  background-size: #{$size};
+}
+@mixin sprite($position){
+  background: url(../img/icon/sprite.png) no-repeat #{$position};
+  @include background-size(120px 120px);
+}
+@mixin opacity($opacity: 0.8){
+  opacity: #{$opacity};
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity*100})";
+  filter: alpha(opacity=#{$opacity*100});
+}
+@mixin translateX($translate: -10px){
+  -ms-transform: translateX(#{$translate});
+  -webkit-transform: translateX(#{$translate});
+  transform: translateX(#{$translate});
+}
+@mixin translateY($translate: -10px){
+  -ms-transform: translateY(#{$translate});
+  -webkit-transform: translateY(#{$translate});
+  transform: translateY(#{$translate});
+}
+@mixin box-sizing($type){
+  -moz-box-sizing: #{$type};
+  -webkit-box-sizing: #{$type};
+  box-sizing: #{$type};
+}
+%clear-both{
+  clear: both;
+}
+%clear-left{
+  clear: left;
+}
+%clear-right{
+  clear: right;
+}
+%over-hidden{
+  overflow: hidden;
+}
+%pseudo-reset{
+  display: block;
+  content: "";
+}
+%pseudo-before{
+  @extend %pseudo-reset;
+}
+%pseudo-after{
+  @extend %pseudo-reset;
+  @extend %clear-both;
+}
+%icon-square-16{
+  width: 16px;
+  height: 16px;
+}
+%icon-square-24{
+  width: 24px;
+  height: 24px;
+}
+%icon-square-32{
+  width: 32px;
+  height: 32px;
+}
+%icon-square-48{
+  width: 48px;
+  height: 48px;
+}
+%no-select{
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.clearfix{
+  &:before{
+    @extend %pseudo-before;
+  }
+  &:after{
+    @extend %pseudo-after;
+  }
+}
+.clear{
+  clear: both;
+  content: "";
+}
+.container{
+  @extend .clearfix;
+  width: 1180px;
+  margin: 0 auto;
+}
+.pc{
+  display: block;
+}
+.sp{
+  display: none;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+%rg20{
+  margin-right: 20px;
+}
+%lf20{
+  margin-left: 20px;
+}
+%bt20{
+  margin-bottom: 20px;
+}
+%w50{
+  width: 50%;
+}
+%w100{
+  width: 100%;
+}

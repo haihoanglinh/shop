@@ -33,46 +33,54 @@
         }
     });
 
-      /* slider */
-      setInterval(function () {
-          moveRight();
-      }, 6000);
+    /* slider */
+    setInterval(function () {
+        moveRight();
+    }, 6000);
 
-      var slideCount = $('#slider ul li').length;
-      var slideWidth = $('#slider ul li').width();
-      var slideHeight = $('#slider ul li').height();
-      var sliderUlWidth = slideCount * slideWidth;
+    var itemWidth = $(window).width();
+    $('.itemSlide').css({ width: itemWidth, height: slideHeight });
+    
+    var slideCount = $('#slider .slide .itemSlide').length;
+    var slideWidth = $('#slider .slide .itemSlide').width();
+    var slideHeight = $('#slider .slide .itemSlide').height();
+    var sliderUlWidth = slideCount * slideWidth;
 
-      $('#slider').css({ width: slideWidth, height: slideHeight });
+    $('#slider').css({ width: slideWidth, height: slideHeight });
 
-      $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+    $('#slider .slide').css({ width: sliderUlWidth, marginLeft: - slideWidth });
 
-      $('#slider ul li:last-child').prependTo('#slider ul');
+    $('#slider .slide .itemSlide:last-child').prependTo('#slider .slide');
 
-      function moveLeft() {
-          $('#slider ul').animate({
-              left: + slideWidth
-          }, 1000, function () {
-              $('#slider ul li:last-child').prependTo('#slider ul');
-              $('#slider ul').css('left', '');
-          });
-      };
+    function moveLeft() {
+        $('#slider .slide').animate({
+            left: + slideWidth
+        }, 1000, function () {
+            $('#slider .slide .itemSlide:last-child').prependTo('#slider .slide');
+            $('#slider .slide').css('left', '');
+        });
+    };
 
-      function moveRight() {
-          $('#slider ul').animate({
-              left: - slideWidth
-          }, 1000, function () {
-              $('#slider ul li:first-child').appendTo('#slider ul');
-              $('#slider ul').css('left', '');
-          });
-      };
+    function moveRight() {
+        $('#slider .slide').animate({
+            left: - slideWidth
+        }, 1000, function () {
+            $('#slider .slide .itemSlide:first-child').appendTo('#slider .slide');
+            $('#slider .slide').css('left', '');
+        });
+    };
 
-      $('.prev').click(function () {
-          moveLeft();
-      });
+    $('.prev').click(function () {
+        moveLeft();
+    });
 
-      $('.next').click(function () {
-          moveRight();
-      });
+    $('.next').click(function () {
+        moveRight();
+    });
+    
+    // Basic FitVids Test
+    $(".video").fitVids();
+    // Custom selector and No-Double-Wrapping Prevention Test
+    $(".video").fitVids({ customSelector: "iframe[src^='http://socialcam.com']"});
   });
 })(jQuery);
